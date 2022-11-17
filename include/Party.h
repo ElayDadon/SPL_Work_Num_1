@@ -3,7 +3,7 @@
 #include <vector>
 #include "Agent.h"
 #include "Coalition.h"
-using std::string,std::vector;
+using std::string;using std::vector;
 
 class JoinPolicy;
 class Simulation;
@@ -27,10 +27,16 @@ public:
     const string &getName() const;
     int getId() const;
     const vector<Agent*> getOffers();
+    const void addOffer(Agent*);
     Coalition* getCoalition();
+    void setCoalition(Coalition* set_coalition);
+    void start_timer();
+    int get_timer();
+
 
 private:
     int mId;
+    int timer=0; 
     string mName;
     int mMandates;
     JoinPolicy *mJoinPolicy;

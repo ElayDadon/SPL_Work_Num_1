@@ -20,6 +20,19 @@ int Agent::getPartyId() const
 void Agent::step(Simulation &sim)
 {
     // TODO: implement this method
-sim.getParty(mPartyId);
-mSelectionPolicy->select(&sim.getGraph(), mPartyId);
+Party* allowedParty = mSelectionPolicy -> select(&sim.getGraph(),mPartyId);
+if (allowedParty != nullptr)
+{
+    /* there is no agent from the same party that already asked,
+     then ask the party to join to the coalition */
+
+allowedParty ->setState(CollectingOffers);
+if(allowedParty->get_timer() == 0)
+{
+    allowedParty->start_timer();
+}
+allowedParty -> addOffer(this);
+}
+
+     
 }
