@@ -29,3 +29,7 @@ void Party::step(Simulation &s)
 {
     // TODO: implement this method
 }
+
+int Party::getId() const {
+    return mId;
+}
