@@ -5,6 +5,9 @@ using std::vector;
 
 class Coalition{
 public:
+    const vector<int> getParties();
+    bool contains(int partyId);
+private:
     int id;
     int* mandates;
     vector<int> parties;

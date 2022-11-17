@@ -11,4 +11,7 @@ public:
     virtual Party* select(Graph* graph, int partyId);
 };
 
-class EdgeWeightSelectionPolicy: public SelectionPolicy{ };
+class EdgeWeightSelectionPolicy: public SelectionPolicy{
+public:
+    virtual Party* select(Graph* graph, int partyId);
+};

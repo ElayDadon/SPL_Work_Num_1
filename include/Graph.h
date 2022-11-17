@@ -18,7 +18,6 @@ public:
 private:
     vector<Party> mVertices;
     vector<vector<int>> mEdges;
-    const vector<Party*> getNeighbors(int partyId);
     const vector<Party*> getValidNeighbors(int partyId);
-
+    bool isValidParty(Party* party, int partyId);
 };

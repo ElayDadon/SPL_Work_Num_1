@@ -1,10 +1,7 @@
 #include "../include/SelectionPolicy.h"
-
+#include "../include/Graph.h"
 
 Party *MandatesSelectionPolicy::select(Graph *graph, int partyId)
 {
-    bool found = false;
-    while(!found){
-
-    }
+    return graph->getHeaviestNeighbor(partyId);
 }
