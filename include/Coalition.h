@@ -7,7 +7,7 @@ class Coalition{
 public:
     const vector<int> getParties();
     bool contains(int partyId);
-    int*
+    int* getMandates();
 private:
     int id;
     int* mandates;
