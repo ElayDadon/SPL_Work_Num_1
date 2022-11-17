@@ -33,6 +33,4 @@ if(allowedParty->get_timer() == 0)
 }
 allowedParty -> addOffer(this);
 }
-
-     
 }
