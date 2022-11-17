@@ -27,7 +27,7 @@ const Party &Graph::getParty(int partyId) const
 
 
 
-const vector<Party*> Graph::getValidNeighbors(int partyId) {
+const vector<Party*> Graph::getValidNeighbors(int partyId) const{
     vector<Party*> neighbors;
     for(unsigned i = 0; i < mVertices.size(); i++){
         if(getEdgeWeight(partyId, mVertices[i].getId()) > 0) {
@@ -39,7 +39,7 @@ const vector<Party*> Graph::getValidNeighbors(int partyId) {
     return neighbors;
 }
 
-bool Graph::isValidParty(Party *party, int partyId) {
+bool Graph::isValidParty(Party *party, int partyId) const{
     vector<Agent*> offers = party->getOffers();
     for (int i = 0; i < offers.size(); ++i) {
         Agent* agent = offers[i];
@@ -50,7 +50,7 @@ bool Graph::isValidParty(Party *party, int partyId) {
     return true;
 }
 
-Party* Graph::getHeaviestNeighbor(int partyId) {
+Party* Graph::getHeaviestNeighbor(int partyId) const{
     vector<Party*> neighbors = getValidNeighbors(partyId);
     Party *maxNeighbor;
     if(neighbors.size() != 0) {
@@ -63,7 +63,7 @@ Party* Graph::getHeaviestNeighbor(int partyId) {
     return maxNeighbor;
 }
 
-Party* Graph::getHeaviestEdgeNeighbor(int partyId) {
+Party* Graph::getHeaviestEdgeNeighbor(int partyId) const{
     vector<Party*> neighbors = getValidNeighbors(partyId);
     Party *maxEdgeNeighbor;
     if(neighbors.size() != 0) {
