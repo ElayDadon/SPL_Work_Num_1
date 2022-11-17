@@ -21,5 +21,5 @@ void Agent::step(Simulation &sim)
 {
     // TODO: implement this method
 sim.getParty(mPartyId);
-mSelectionPolicy->select(&sim.getGraph(), mPartyId);
+
 }
