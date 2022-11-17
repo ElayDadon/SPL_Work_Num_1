@@ -13,7 +13,12 @@ void Simulation::step()
 bool Simulation::shouldTerminate() const
 {
     // TODO implement this method
+         int a[mAgents.size()];
+     for(Agent a: mAgents){
+
+     }
     return true;
+    
 }
 
 const Graph &Simulation::getGraph() const

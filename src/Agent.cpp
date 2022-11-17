@@ -1,4 +1,6 @@
 #include "Agent.h"
+#include <vector>
+#include "Simulation.h"
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy)
 {
@@ -18,6 +20,6 @@ int Agent::getPartyId() const
 void Agent::step(Simulation &sim)
 {
     // TODO: implement this method
-
+sim.getParty(mPartyId);
 
 }
