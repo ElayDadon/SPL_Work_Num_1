@@ -34,3 +34,8 @@ if(allowedParty->get_timer() == 0)
 allowedParty -> addOffer(this);
 }
 }
+Agent::~Agent(){
+    delete mSelectionPolicy;
+    if(coalition)
+        delete coalition;
+}
