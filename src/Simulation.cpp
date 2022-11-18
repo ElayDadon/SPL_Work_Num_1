@@ -25,10 +25,10 @@ const Graph &Simulation::getGraph() const
 {
     return mGraph;
 }
-
-Graph* Simulation::getNonConstGraph() {
-    return &mGraph;
+Graph &Simulation::getNonConstGraph(){
+    return mGraph;
 }
+
 const vector<Agent> &Simulation::getAgents() const
 {
     return mAgents;
