@@ -33,7 +33,7 @@ const vector<Party*> Graph::getValidNeighbors(int partyId) {
         if(getEdgeWeight(partyId, mVertices[i].getId()) > 0) {
             Party* partyToJoin = &mVertices[i];
             if((partyToJoin->getState()) != Joined & isValidParty(partyToJoin ,partyId))
-                neighbors.push_back(&mVertices[i]);
+                neighbors.push_back(partyToJoin);
         }
     }
     return neighbors;

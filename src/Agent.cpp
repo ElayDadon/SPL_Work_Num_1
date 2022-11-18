@@ -23,3 +23,8 @@ void Agent::step(Simulation &sim)
 sim.getParty(mPartyId);
 
 }
+Agent::~Agent(){
+    delete mSelectionPolicy;
+    if(coalition)
+        delete coalition;
+}
