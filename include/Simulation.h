@@ -18,6 +18,7 @@ public:
     Graph &getGraph();
     const Graph &getGraph() const;
     const vector<Agent> &getAgents() const;
+    void setAgents(Agent*);
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
     Graph* getNonConstGraph();

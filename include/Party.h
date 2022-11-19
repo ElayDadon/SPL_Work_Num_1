@@ -32,6 +32,7 @@ public:
     void setCoalition(Coalition* set_coalition);
     void start_timer();
     int get_timer();
+    void increase_timer();
 
 
 private:

@@ -25,8 +25,8 @@ const Graph &Simulation::getGraph() const
 {
     return mGraph;
 }
-Graph &Simulation::getNonConstGraph(){
-    return mGraph;
+Graph* Simulation::getNonConstGraph(){
+    return &mGraph;
 }
 
 const vector<Agent> &Simulation::getAgents() const
@@ -37,6 +37,9 @@ const vector<Agent> &Simulation::getAgents() const
 const Party &Simulation::getParty(int partyId) const
 {
     return mGraph.getParty(partyId);
+}
+void Simulation::setAgents(Agent* agent_to_add){
+    mAgents.push_back(*agent_to_add);
 }
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.
