@@ -1,4 +1,5 @@
 #include "Simulation.h"
+#include "Party.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {
@@ -8,16 +9,34 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
 void Simulation::step()
 {
     // TODO: implement this method
+    int numofparties = mGraph.getNumVertices();
+    for(int i=0;i<numofparties;i++){  
+    Party party_saver = mGraph.getParty(i);
+    party_saver.step(*this);
+    }
+    for(Agent agent_saver:mAgents){
+        agent_saver.step(*this);
+    }
 }
 
 bool Simulation::shouldTerminate() const
 {
     // TODO implement this method
-         int a[mAgents.size()];
-     for(Agent a: mAgents){
-
-     }
+    int numofparties = mGraph.getNumVertices();
+    int join_parties_counter =0;
+    for(int i=0;i<numofparties;i++){  
+    Party party_saver = mGraph.getParty(i);
+    if(*(party_saver.getCoalition()->getMandates()) >= 61)
+    return true; 
+    if(party_saver.getState()==Joined){
+        join_parties_counter++;
+    }
+}
+    if(join_parties_counter==numofparties)
     return true;
+
+
+    return false;
     
 }
 
@@ -46,6 +65,7 @@ void Simulation::setAgents(Agent* agent_to_add){
 /// At the simulation initialization - the result will be [[agent0.partyId], [agent1.partyId], ...]
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
+    //[[],[],[]]
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
     return vector<vector<int>>();
 }

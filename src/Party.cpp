@@ -39,7 +39,9 @@ const string & Party::getName() const
 {
     return mName;
 }
-
+ Coalition* Party::getCoalition(){
+    return this->coalition;
+ }
 void Party::step(Simulation &s)
 {
     if(this->is_timer_on&&this ->get_timer()<3){

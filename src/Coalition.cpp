@@ -3,7 +3,7 @@
 Coalition::~Coalition() {
     delete mandates;
 }
-
+//this function returns the number of Mandates as a pointer 
 int *Coalition::getMandates() {
     return mandates;
 }
