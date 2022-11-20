@@ -51,6 +51,8 @@ void Party::step(Simulation &s)
 this -> setState(Joined);
 Agent* agent_to_join_by_coalition = mJoinPolicy -> join(this ->getOffers());
 s.setAgents(agent_to_join_by_coalition);
+agent_to_join_by_coalition ->getCoalition() ->addParty(mId);
+agent_to_join_by_coalition ->getCoalition() ->addMandates(mMandates);
 
     }
     // TODO: implement this method
