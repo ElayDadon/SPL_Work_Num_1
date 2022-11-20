@@ -28,6 +28,7 @@ bool Simulation::shouldTerminate() const
     Party party_saver = mGraph.getParty(i);
     if(*(party_saver.getCoalition()->getMandates()) >= 61)
     return true; 
+    
     if(party_saver.getState()==Joined){
         join_parties_counter++;
     }
