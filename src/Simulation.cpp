@@ -1,5 +1,7 @@
 #include "../include/Simulation.h"
 #include "../include/Party.h"
+#include "../include/Agent.h"
+#include "../include/Graph.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {
@@ -69,4 +71,10 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
     //[[],[],[]]
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
     return vector<vector<int>>();
+}
+
+void Simulation::updateMandates(){
+    for(int i=0;i<mAgents.size();i++){
+        mAgents[i].updateMandates(getParty(mAgents[i].getPartyId()).getMandates());
+    }
 }

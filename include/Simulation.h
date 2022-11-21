@@ -22,6 +22,7 @@ public:
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
     Graph* getNonConstGraph();
+    void updateMandates();
 private:
     Graph mGraph;
     vector<Agent> mAgents;
