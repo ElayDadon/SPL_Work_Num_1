@@ -3,3 +3,7 @@
 Party* EdgeWeightSelectionPolicy::select(Graph *graph, int partyId) {
     return graph->getHeaviestEdgeNeighbor(partyId);
 }
+
+SelectionPolicy* EdgeWeightSelectionPolicy::clone() {
+    return new EdgeWeightSelectionPolicy;
+}
