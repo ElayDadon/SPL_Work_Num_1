@@ -1,5 +1,5 @@
-#include "Simulation.h"
-#include "Party.h"
+#include "../include/Simulation.h"
+#include "../include/Party.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {

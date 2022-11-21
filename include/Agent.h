@@ -4,7 +4,7 @@
 #include "Graph.h"
 #include "Coalition.h"
 class SelectionPolicy;
-
+class Simulation;
 class Agent
 {
 public:

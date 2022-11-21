@@ -7,7 +7,9 @@ Coalition::~Coalition() {
 int *Coalition::getMandates() {
     return mandates;
 }
-
+void Coalition::addMandates(int mandates){
+    *(this->mandates)+= mandates;
+}
 bool Coalition::contains(int partyId) {
     for (int i = 0; i < parties.size(); ++i) {
         if(parties[i] == partyId)
