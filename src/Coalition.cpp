@@ -3,11 +3,13 @@
 Coalition::~Coalition() {
     delete mandates;
 }
-
+//this function returns the number of Mandates as a pointer 
 int *Coalition::getMandates() {
     return mandates;
 }
-
+void Coalition::addMandates(int mandates){
+    *(this->mandates)+= mandates;
+}
 bool Coalition::contains(int partyId) {
     for (int i = 0; i < parties.size(); ++i) {
         if(parties[i] == partyId)

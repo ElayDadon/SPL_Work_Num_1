@@ -9,6 +9,7 @@ public:
     const vector<int> getParties();
     bool contains(int partyId);
     int* getMandates();
+    void addMandates(int mandates);
     void addParty(int partyId);
 
 private:

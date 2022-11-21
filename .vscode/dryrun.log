@@ -1,0 +1,5 @@
+make bin/cRace --dry-run --keep-going --print-directory
+make: Entering directory '/home/golem/Work 1'
+g++ -o bin/cRace bin/main.o bin/Agent.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o bin/Coalition.o bin/EdgeWeightSelectionPolicy.o bin/LastOfferJoinPolicy.o bin/MandatesJoinPolicy.o bin/MandatesSelectionPolicy.o
+make: Leaving directory '/home/golem/Work 1'
+ 
