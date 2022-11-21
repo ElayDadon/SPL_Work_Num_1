@@ -6,16 +6,14 @@ using std::vector;
 class Coalition{
 public:
     Coalition(int id,int Mmandates);
-    ~Coalition();
     const vector<int> getParties();
     bool contains(int partyId);
-    int* getMandates();
+    int getMandates();
     void addMandates(int mandates);
     void addParty(int partyId);
 
 private:
     int id;
-    int* mandates;
+    int mandates;
     vector<int> parties;
-
 };
