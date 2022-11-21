@@ -13,7 +13,7 @@ void Simulation::step()
     // TODO: implement this method
     int numofparties = mGraph.getNumVertices();
     for(int i=0;i<numofparties;i++){  
-    Party party_saver = mGraph.getParty(i);
+    Party party_saver = mGraph.getNonConstParty(i);
     party_saver.step(*this);
     }
     for(Agent agent_saver:mAgents){
@@ -28,7 +28,7 @@ bool Simulation::shouldTerminate() const
     int join_parties_counter =0;
     for(int i=0;i<numofparties;i++){  
     Party party_saver = mGraph.getParty(i);
-    if(*(party_saver.getCoalition()->getMandates()) >= 61)
+    if(party_saver.getCoalition()->getMandates() >= 61)
     return true; 
     
     if(party_saver.getState()==Joined){

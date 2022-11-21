@@ -26,6 +26,9 @@ const Party &Graph::getParty(int partyId) const
     return mVertices[partyId];
 }
 
+Party& Graph::getNonConstParty(int partyId) {
+    return mVertices[partyId];
+}
 
 
 const vector<Party*> Graph::getValidNeighbors(int partyId) {

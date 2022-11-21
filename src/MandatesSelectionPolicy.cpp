@@ -5,3 +5,7 @@ Party *MandatesSelectionPolicy::select(Graph *graph, int partyId)
 {
     return graph->getHeaviestNeighbor(partyId);
 }
+
+SelectionPolicy* MandatesSelectionPolicy::clone() {
+    return new MandatesSelectionPolicy;
+}

@@ -52,3 +52,42 @@ Agent::Agent(Agent &other) {
 void Agent::updateMandates(int mandates){
     coalition = new Coalition(mPartyId, mandates);
 }
+
+Agent& Agent::operator=(const Agent& other){
+    if(this != &other){
+        delete this;
+        mAgentId = other.mAgentId;
+        mPartyId = other.mPartyId;
+        mSelectionPolicy = other.mSelectionPolicy->clone();
+        coalition = other.coalition;
+    }
+    return *this;
+}
+
+Agent::Agent(const Agent& other){
+    *this = other;
+}
+
+Agent::Agent(Agent&& other) noexcept :mAgentId(other.mAgentId), mPartyId(other.mPartyId), mSelectionPolicy(other.mSelectionPolicy), coalition(other.coalition){
+    other.mSelectionPolicy = nullptr;
+    other.coalition = nullptr;
+}
+
+Agent& Agent::operator=(Agent&& other) noexcept{
+    if(this != &other) {
+        delete this;
+        mAgentId = other.mAgentId;
+        mPartyId = other.mPartyId;
+        mSelectionPolicy = other.mSelectionPolicy;
+        coalition = other.coalition;
+
+        //move other
+        other.coalition = nullptr;
+        other.mSelectionPolicy = nullptr;
+    }
+    return *this;
+}
+
+
+
+
