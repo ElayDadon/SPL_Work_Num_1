@@ -1,13 +1,12 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Agent.h"
 #include "Coalition.h"
 using std::string;using std::vector;
 
 class JoinPolicy;
 class Simulation;
-
+class Agent;
 enum State
 {
     Waiting,

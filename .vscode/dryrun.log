@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/golem/Work 1'
+rm -f bin/*
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/main.o src/main.cpp
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Agent.o src/Agent.cpp
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Graph.o src/Graph.cpp
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Parser.o src/Parser.cpp
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Party.o src/Party.cpp
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Simulation.o src/Simulation.cpp
+g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Coalition.o src/Coalition.cpp
+make: Leaving directory '/home/golem/Work 1'
+ 
+make: *** No rule to make target 'EdgeWeightSelectionPolicy.o', needed by 'bin/cRace'.
+make: *** No rule to make target 'LastOfferJoinPolicy.o', needed by 'bin/cRace'.
+make: *** No rule to make target 'MandatesJoinPolicy.o', needed by 'bin/cRace'.
+make: *** No rule to make target 'MandatesSelectionPolicy', needed by 'bin/cRace'.
+

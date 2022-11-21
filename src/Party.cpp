@@ -1,6 +1,7 @@
 #include "Party.h"
 #include "JoinPolicy.h"
 #include "Simulation.h"
+#include "Agent.h"
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting)
 {
     // You can change the implementation of the constructor, but not the signature!
