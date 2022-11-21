@@ -1,4 +1,6 @@
 #include "../include/JoinPolicy.h"
+#include "Agent.h"
+#include "Coalition.h"
 
 Agent* MandatesJoinPolicy::join(vector<Agent*> offers){
     Agent* maxAgent = offers[0];

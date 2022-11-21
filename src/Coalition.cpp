@@ -1,12 +1,14 @@
 #include "../include/Coalition.h"
 
-Coalition::~Coalition() {
-    delete mandates;
-}
 //this function returns the number of Mandates as a pointer 
 int *Coalition::getMandates() {
     return mandates;
 }
+Coalition::Coalition(int id,int Mmandates){
+this->id = id;
+this->mandates = &Mmandates;
+}
+
 void Coalition::addMandates(int mandates){
     *(this->mandates)+= mandates;
 }
@@ -24,4 +26,8 @@ const vector<int> Coalition::getParties() {
 
 void Coalition::addParty(int partyId) {
     parties.push_back(partyId);
+}
+Coalition::~Coalition() {
+    if(mandates)
+        delete mandates;
 }
