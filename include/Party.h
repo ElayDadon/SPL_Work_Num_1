@@ -35,7 +35,7 @@ public:
 
 
 private:
-    bool is_timer_on;
+    bool is_timer_on=false;
     int mId;
     int timer; 
     string mName;

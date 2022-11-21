@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Nov 21 12:54:58 2022
+# Make data base, printed on Mon Nov 21 13:57:57 2022
 
 # Variables
 
@@ -53,6 +53,7 @@ MAKEFILE_LIST :=  makefile
 # automatic
 @F = $(notdir $@)
 # environment
+ 
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # environment
 USERNAME = golem
@@ -119,7 +120,7 @@ VSCODE_CODE_CACHE_PATH = /home/golem/.config/Code/CachedData/6261075646f055b9906
 # environment
 LOGNAME = golem
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -238,12 +239,6 @@ bin/MandatesJoinPolicy.o: src/MandatesJoinPolicy.cpp
 #  recipe to execute (from 'makefile', line 34):
 	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/MandatesJoinPolicy.o src/MandatesJoinPolicy.cpp
 
-# Not a target:
-MandatesJoinPolicy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 all: clean bin/cRace
 #  Command line target.
 #  Implicit rule search has been done.
@@ -263,6 +258,7 @@ bin/Simulation.o: src/Simulation.cpp
 # Not a target:
 src/Agent.cpp:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -279,7 +275,6 @@ src/Coalition.cpp:
 #  File has not been updated.
 
 bin/Agent.o: src/Agent.cpp
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -296,7 +291,7 @@ bin/Coalition.o: src/Coalition.cpp
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-11-21 02:01:12.451185473
+#  Last modified 2022-11-21 13:53:25.916302138
 #  File has been updated.
 #  Successfully updated.
 
@@ -358,11 +353,12 @@ bin/Graph.o: src/Graph.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-LastOfferJoinPolicy.o:
+bin/LastOfferJoinPolicy.o: src/LastOfferJoinPolicy.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'makefile', line 31):
+	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/LastOfferJoinPolicy.o src/LastOfferJoinPolicy.cpp
 
 # Not a target:
 src/MandatesSelectionPolicy.cpp:
@@ -410,38 +406,20 @@ bin/MandatesSelectionPolicy.o: src/MandatesSelectionPolicy.cpp
 #  recipe to execute (from 'makefile', line 37):
 	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/MandatesSelectionPolicy.o src/MandatesSelectionPolicy.cpp
 
-# Not a target:
-MandatesSelectionPolicy:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 bin/main.o: src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'makefile', line 7):
 	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/main.o src/main.cpp
 
-bin/cRace: bin/main.o bin/Agent.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o bin/Coalition.o EdgeWeightSelectionPolicy.o LastOfferJoinPolicy.o MandatesJoinPolicy.o MandatesSelectionPolicy
+bin/cRace: bin/main.o bin/Agent.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o bin/Coalition.o bin/EdgeWeightSelectionPolicy.o bin/LastOfferJoinPolicy.o bin/MandatesJoinPolicy.o bin/MandatesSelectionPolicy.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 4):
-	g++ -o bin/cRace bin/main.o bin/Agent.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o bin/Coalition.o EdgeWeightSelectionPolicy.o LastOfferJoinPolicy.o MandatesJoinPolicy.o MandatesSelectionPolicy
-
-# Not a target:
-EdgeWeightSelectionPolicy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-bin/LastOfferJoinPolicy.o: src/LastOfferJoinPolicy.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 31):
-	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/LastOfferJoinPolicy.o src/LastOfferJoinPolicy.cpp
+	g++ -o bin/cRace bin/main.o bin/Agent.o bin/Graph.o bin/Parser.o bin/Party.o bin/Simulation.o bin/Coalition.o bin/EdgeWeightSelectionPolicy.o bin/LastOfferJoinPolicy.o bin/MandatesJoinPolicy.o bin/MandatesSelectionPolicy.o
 
 # Not a target:
 src/MandatesJoinPolicy.cpp:
@@ -450,19 +428,19 @@ src/MandatesJoinPolicy.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=32/1024=3%, Rehash=0, Collisions=4/77=5%
+# Load=28/1024=3%, Rehash=0, Collisions=2/77=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 45 / storage = 682 B / avg = 15 B
-# current buf: size = 8162 B / used = 682 B / count = 45 / avg = 15 B
+# strcache buffers: 1 (0) / strings = 41 / storage = 587 B / avg = 14 B
+# current buf: size = 8162 B / used = 587 B / count = 41 / avg = 14 B
 
-# strcache performance: lookups = 74 / hit rate = 39%
+# strcache performance: lookups = 74 / hit rate = 44%
 # hash-table stats:
-# Load=45/8192=1%, Rehash=0, Collisions=1/74=1%
-# Finished Make data base on Mon Nov 21 12:54:58 2022
+# Load=41/8192=1%, Rehash=0, Collisions=1/74=1%
+# Finished Make data base on Mon Nov 21 13:57:57 2022
 
  
