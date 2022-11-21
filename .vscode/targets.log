@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Nov 21 17:58:12 2022
+# Make data base, printed on Mon Nov 21 21:38:13 2022
 
 # Variables
 
@@ -47,7 +47,7 @@ SNAP_DATA = /var/snap/code/113
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:47913
+JOURNAL_STREAM = 8:42926
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -67,11 +67,11 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=8872a2d00cc63d4bc780c03c637b9fdf
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=5e70adc76c231e1d497f2865637be7e2
 # environment
 _ = /snap/code/113/usr/share/code/code
 # environment
-MANAGERPID = 2079
+MANAGERPID = 2153
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -85,7 +85,7 @@ PATH = /home/golem/.local/bin:/home/golem/.local/bin:/usr/local/sbin:/usr/local/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/golem:@/tmp/.ICE-unix/2345,unix/golem:/tmp/.ICE-unix/2345
+SESSION_MANAGER = local/golem:@/tmp/.ICE-unix/2413,unix/golem:/tmp/.ICE-unix/2413
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -99,7 +99,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 0d86f2b86e4a4188984229916a901b54
+INVOCATION_ID = e7065b3f30d442b58d642d2f9ee20b63
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/113/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -111,7 +111,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3424
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4510
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +123,7 @@ PWD = /home/golem/Work 1
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2311
+SSH_AGENT_PID = 2379
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -141,7 +141,7 @@ VSCODE_CODE_CACHE_PATH = /home/golem/.config/Code/CachedData/6261075646f055b9906
 # environment
 LOGNAME = golem
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -241,9 +241,9 @@ WINDOWPATH = 2
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3462
+VSCODE_PID = 4548
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=8872a2d00cc63d4bc780c03c637b9fdf
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=5e70adc76c231e1d497f2865637be7e2
 # variable set hash-table stats:
 # Load=117/1024=11%, Rehash=0, Collisions=17/145=12%
 
@@ -281,6 +281,7 @@ bin/MandatesJoinPolicy.o: src/MandatesJoinPolicy.cpp
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 34):
 	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/MandatesJoinPolicy.o src/MandatesJoinPolicy.cpp
+ 
 
 all: clean bin/cRace
 #  Command line target.
@@ -288,7 +289,6 @@ all: clean bin/cRace
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
@@ -483,6 +483,6 @@ src/MandatesJoinPolicy.cpp:
 # strcache performance: lookups = 74 / hit rate = 44%
 # hash-table stats:
 # Load=41/8192=1%, Rehash=0, Collisions=1/74=1%
-# Finished Make data base on Mon Nov 21 17:58:12 2022
+# Finished Make data base on Mon Nov 21 21:38:13 2022
 
  

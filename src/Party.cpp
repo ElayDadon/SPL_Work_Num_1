@@ -2,7 +2,8 @@
 #include "JoinPolicy.h"
 #include "Simulation.h"
 #include "Agent.h"
-Party::Party(int id, string name, int mandates, JoinPolicy *jp) : is_timer_on(false), mId(id),timer(0), mName(name), mMandates(mandates), mJoinPolicy(jp),mState(Waiting) ,offers()
+
+Party::Party(int id, string name, int mandates, JoinPolicy *jp) : is_timer_on(false), mId(id),timer(0), mName(name), mMandates(mandates), mJoinPolicy(jp),mState(Waiting) ,offers(), coalition(nullptr)
 {
     // You can change the implementation of the constructor, but not the signature!
 }
@@ -46,8 +47,9 @@ const string & Party::getName() const
 Party::Party(const Party& other){
     *this = other;
 }
-Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers){
+Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers), coalition(other.coalition){
     other.mJoinPolicy = nullptr;
+    other.coalition = nullptr;
 }
 Party& Party::operator=(const Party& other){
     if(this != &other) {
@@ -59,6 +61,7 @@ Party& Party::operator=(const Party& other){
         offers = other.offers;
         timer = other.timer;
         is_timer_on = other.is_timer_on;
+        coalition = other.coalition;
     }
     return *this;
 }
@@ -72,9 +75,10 @@ Party& Party::operator=(Party&& other) noexcept{
         offers = other.offers;
         timer = other.timer;
         is_timer_on = other.is_timer_on;
-
+        coalition = other.coalition;
         //move other
         other.mJoinPolicy = nullptr;
+        other.coalition = nullptr;
     }
     return *this;
 }
@@ -83,12 +87,13 @@ void Party::step(Simulation &s)
     if(this->is_timer_on&&this ->get_timer()<3){
         this->increase_timer();
     }
-    if(this->get_timer() == 3 & this->getState()!=Joined){
-this -> setState(Joined);
-Agent* agent_to_join_by_coalition = mJoinPolicy -> join(this ->getOffers());
-s.setAgents(agent_to_join_by_coalition);
-agent_to_join_by_coalition ->getCoalition() ->addParty(mId);
-agent_to_join_by_coalition ->getCoalition() ->addMandates(mMandates);
+
+    if(this->get_timer() == 3 & this->getState() != Joined){
+      this -> setState(Joined);
+      Agent* agent_to_join_by_coalition = mJoinPolicy -> join(this ->getOffers());
+      s.setAgents(agent_to_join_by_coalition);
+      agent_to_join_by_coalition ->getCoalition() ->addParty(mId);
+      agent_to_join_by_coalition ->getCoalition() ->addMandates(mMandates);
 
     }
     // TODO: implement this method

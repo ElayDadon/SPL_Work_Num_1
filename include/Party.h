@@ -40,7 +40,7 @@ public:
 private:
     bool is_timer_on=false;
     int mId;
-    int timer; 
+    int timer=0; 
     string mName;
     int mMandates;
     JoinPolicy *mJoinPolicy;
