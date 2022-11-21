@@ -24,7 +24,14 @@ sim.getParty(mPartyId);
 
 }
 Agent::~Agent(){
-    delete mSelectionPolicy;
+    if(mSelectionPolicy)
+        delete mSelectionPolicy;
     if(coalition)
         delete coalition;
+}
+
+Agent::Agent(Agent &other) {
+    delete this;
+    mSelectionPolicy = other.mSelectionPolicy;
+    coalition = other.coalition;
 }
