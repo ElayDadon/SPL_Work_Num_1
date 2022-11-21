@@ -2,6 +2,8 @@
 #include "../include/Party.h"
 #include "../include/Agent.h"
 #include "../include/Graph.h"
+#include "../include/Coalition.h"
+
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {
@@ -28,7 +30,8 @@ bool Simulation::shouldTerminate() const
     int join_parties_counter =0;
     for(int i=0;i<numofparties;i++){  
     Party party_saver = mGraph.getParty(i);
-    if(*(party_saver.getCoalition()->getMandates()) >= 61)
+    Coalition* col_saver = party_saver.getCoalition();
+    if(*(col_saver->getMandates()) >= 61)
     return true; 
     
     if(party_saver.getState()==Joined){
