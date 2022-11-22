@@ -35,6 +35,8 @@ public:
     void start_timer();
     int get_timer();
     void increase_timer();
+    void addCoalition(Coalition* c);
+
 
 
 private:
@@ -47,4 +49,10 @@ private:
     State mState;
     vector<Agent*> offers;
     Coalition* coalition;
+//need to chooose where the coaition will be, agent or party and then 
+//refrence counter in agent, that says how many agent points to the same coalition on the heap. 
+//only free the memory once the reference counter gets to 1 
+//another solution is to allow a different class on the higher hiarcy to bbe in charge to free the memory. 
+//vector of all the allocated coallitiin the simulation instance.
+
 };

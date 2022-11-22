@@ -20,7 +20,13 @@ int Agent::getPartyId() const
 Coalition* Agent::getCoalition(){
     return this->coalition;
 }
-
+void Agent::setPartyId(int partyId){
+    mPartyId = partyId;
+}
+void Agent::setNull(){
+    this->mSelectionPolicy =nullptr;
+    this->coalition = nullptr;
+}
 void Agent::step(Simulation &sim)
 {
     // TODO: implement this method
@@ -44,18 +50,21 @@ Agent::~Agent(){
     if(coalition)
         delete coalition;
 }
-Agent::Agent(Agent &other) {
-    delete this;
-    mSelectionPolicy = other.mSelectionPolicy;
-    coalition = other.coalition;
-}
 void Agent::updateMandates(int mandates){
     coalition = new Coalition(mPartyId, mandates);
+    coalition->addParty(mPartyId);
+}
+void Agent::setAgentId(int id){
+    this->mAgentId = id;
 }
 
 Agent& Agent::operator=(const Agent& other){
     if(this != &other){
-        delete this;
+        if(mSelectionPolicy)
+            delete mSelectionPolicy;
+        if(coalition)
+            delete coalition;
+
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
         mSelectionPolicy = other.mSelectionPolicy->clone();
@@ -64,8 +73,8 @@ Agent& Agent::operator=(const Agent& other){
     return *this;
 }
 
-Agent::Agent(const Agent& other){
-    *this = other;
+Agent::Agent(const Agent& other) : mAgentId(other.mAgentId), mPartyId(other.mPartyId),mSelectionPolicy(other.mSelectionPolicy->clone()), coalition(other.coalition) {
+    
 }
 
 Agent::Agent(Agent&& other) noexcept :mAgentId(other.mAgentId), mPartyId(other.mPartyId), mSelectionPolicy(other.mSelectionPolicy), coalition(other.coalition){
@@ -75,7 +84,11 @@ Agent::Agent(Agent&& other) noexcept :mAgentId(other.mAgentId), mPartyId(other.m
 
 Agent& Agent::operator=(Agent&& other) noexcept{
     if(this != &other) {
-        delete this;
+       if(mSelectionPolicy)
+            delete mSelectionPolicy;
+        if(coalition)
+            delete coalition;
+
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
         mSelectionPolicy = other.mSelectionPolicy;

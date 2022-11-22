@@ -19,7 +19,7 @@ void Party::start_timer(){
     this ->timer =0;
 }
 void Party::increase_timer(){
-    this ->timer++;
+    timer++;
 }
 int Party::get_timer(){
     return this->timer;
@@ -36,16 +36,18 @@ int Party::getMandates() const
 {
     return mMandates;
 }
-
 const string & Party::getName() const
 {
     return mName;
 }
+void Party::setCoalition(Coalition* set_coalition){
+    this-> coalition = set_coalition;
+}
  Coalition* Party::getCoalition(){
     return this->coalition;
  }
-Party::Party(const Party& other){
-    *this = other;
+Party::Party(const Party& other): is_timer_on(other.is_timer_on),mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers), coalition(other.coalition){
+    
 }
 Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers), coalition(other.coalition){
     other.mJoinPolicy = nullptr;
@@ -53,7 +55,11 @@ Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other
 }
 Party& Party::operator=(const Party& other){
     if(this != &other) {
-        delete this;
+        if(mJoinPolicy!=nullptr)
+            delete mJoinPolicy;
+        if(coalition)
+            delete coalition;
+    
         mId = other.mId;
         mName = other.mName;
         mMandates = other.mMandates;
@@ -67,7 +73,11 @@ Party& Party::operator=(const Party& other){
 }
 Party& Party::operator=(Party&& other) noexcept{
     if(this != & other) {
-        delete this;
+         if(mJoinPolicy)
+            delete mJoinPolicy;
+        if(coalition)
+            delete coalition;
+
         mId = other.mId;
         mName = other.mName;
         mMandates = other.mMandates;
@@ -82,19 +92,32 @@ Party& Party::operator=(Party&& other) noexcept{
     }
     return *this;
 }
+void Party::addCoalition(Coalition* col_to_update){
+this ->coalition = col_to_update;
+}
 void Party::step(Simulation &s)
 {
     if(this->is_timer_on&&this ->get_timer()<3){
         this->increase_timer();
     }
-
-    if(this->get_timer() == 3 & this->getState() != Joined){
+    if((this->get_timer() == 3) & (this->getState() != Joined)){
       this -> setState(Joined);
-      Agent* agent_to_join_by_coalition = mJoinPolicy -> join(this ->getOffers());
-      s.setAgents(agent_to_join_by_coalition);
-      agent_to_join_by_coalition ->getCoalition() ->addParty(mId);
-      agent_to_join_by_coalition ->getCoalition() ->addMandates(mMandates);
+      Agent agent_to_join_by_coalition = mJoinPolicy -> join((this ->getOffers()));
+      Agent clone_agent = agent_to_join_by_coalition;
+      clone_agent.setAgentId(s.getAgents().size());
+      clone_agent.setPartyId(this->getId());
+      clone_agent.getCoalition() ->addParty(mId);
+      clone_agent.getCoalition() ->addMandates(mMandates);
+      s.setAgents(&clone_agent);
+      Coalition* col = clone_agent.getCoalition(); 
+      int x=col->getId();
+      int y=col->getMandates();
+      Coalition* col_saver = new Coalition(x,y);
+      col_saver ->setParties(col->getParties());
+      
 
+    this->addCoalition(col_saver);
+      agent_to_join_by_coalition.setNull();
     }
     // TODO: implement this method
 }

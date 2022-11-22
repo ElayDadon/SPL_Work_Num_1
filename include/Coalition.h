@@ -11,6 +11,12 @@ public:
     int getMandates();
     void addMandates(int mandates);
     void addParty(int partyId);
+    int getId();
+    void setParties(vector<int> new_parties);
+    void setId(int new_Id);
+    void setMandates(int Mandates);
+
+
 
 private:
     int id;

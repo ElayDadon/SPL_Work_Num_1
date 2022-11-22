@@ -7,6 +7,7 @@ class Simulation;
 class Agent
 {
 public:
+    void setNull();
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy);
     ~Agent();
     Agent(const Agent&);
@@ -18,7 +19,8 @@ public:
     void step(Simulation &);
     Coalition *getCoalition();
     void updateMandates(int);
-
+    void setPartyId(int partyIdToUpdate);
+    void setAgentId(int id);
 private:
     int mAgentId;
     int mPartyId;
