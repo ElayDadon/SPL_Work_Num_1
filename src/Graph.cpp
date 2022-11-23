@@ -44,11 +44,11 @@ const vector<Party*> Graph::getValidNeighbors(int partyId) {
 }
 
 bool Graph::isValidParty(Party *party, int partyId) {
-    vector<Agent*> offers = party->getOffers();
+    vector<Agent> offers = party->getOffers();
     int size_offers = offers.size();
     for (unsigned i = 0; i < size_offers; ++i) {
-        Agent* agent = offers[i];
-        Coalition* c = agent->getCoalition();
+        Agent agent = offers[i];
+        Coalition* c = agent.getCoalition();
         if(c->contains(partyId))
             return false;
     }

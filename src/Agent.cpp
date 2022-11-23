@@ -41,7 +41,7 @@ if (allowedParty != nullptr)
     {
         allowedParty->start_timer();
     }
-    allowedParty -> addOffer(this);
+    allowedParty -> addOffer(*this);
 }
 }
 /*Agent::~Agent(){

@@ -27,7 +27,7 @@ void Party::setState(State state)
 {
     mState = state;
 }
-void Party::addOffer(Agent* offering_agent){
+void Party::addOffer(Agent offering_agent){
     this -> offers.push_back(offering_agent);
 }
 
@@ -87,7 +87,7 @@ void Party::step(Simulation &s)
     }
     if((this->get_timer() == 3) & (this->getState() != Joined)){
       this -> setState(Joined);
-      Agent agent_to_join_by_coalition = mJoinPolicy -> join((this ->getOffers()));
+      Agent agent_to_join_by_coalition = mJoinPolicy -> join(getOffers());
       Agent clone_agent = agent_to_join_by_coalition;
       clone_agent.setAgentId(s.getAgents().size());
       clone_agent.setPartyId(mId);
@@ -103,6 +103,6 @@ int Party::getId() const {
     return mId;
 }
 
-const vector<Agent*> Party::getOffers() {
+const vector<Agent> Party::getOffers() {
     return offers;
 }

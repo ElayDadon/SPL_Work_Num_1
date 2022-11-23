@@ -28,8 +28,8 @@ public:
     void step(Simulation &s);
     const string &getName() const;
     int getId() const;
-    const vector<Agent*> getOffers();
-    void addOffer(Agent*);
+    const vector<Agent> getOffers();
+    void addOffer(Agent);
     void start_timer();
     int get_timer();
     void increase_timer();
@@ -45,7 +45,7 @@ private:
     int mMandates;
     JoinPolicy *mJoinPolicy;
     State mState;
-    vector<Agent*> offers;
+    vector<Agent> offers;
 //need to chooose where the coaition will be, agent or party and then 
 //refrence counter in agent, that says how many agent points to the same coalition on the heap. 
 //only free the memory once the reference counter gets to 1 
