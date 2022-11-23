@@ -24,6 +24,7 @@ bool Coalition::removeParty(int partyId){
     return parties.size() == 0;
 }
 bool Coalition::contains(int partyId) {
+    int k = parties.size();
     for (unsigned i = 0; i < parties.size(); ++i) {
         if(parties.at(i) == partyId)
             return true;

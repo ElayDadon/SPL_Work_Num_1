@@ -1,7 +1,7 @@
-#include "Party.h"
-#include "JoinPolicy.h"
-#include "Simulation.h"
-#include "Agent.h"
+#include "../include/Party.h"
+#include "../include/JoinPolicy.h"
+#include "../include/Simulation.h"
+#include "../include/Agent.h"
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : is_timer_on(false), mId(id),timer(0), mName(name), mMandates(mandates), mJoinPolicy(jp),mState(Waiting){
     // You can change the implementation of the constructor, but not the signature!
@@ -93,7 +93,6 @@ void Party::step(Simulation &s)
       clone_agent.setPartyId(mId);
       clone_agent.getCoalition() ->addParty(mId);
       clone_agent.getCoalition() ->addMandates(mMandates);
-      //fatal error, elay is tambal 
       s.setAgents(clone_agent);
     }
     // TODO: implement this method
