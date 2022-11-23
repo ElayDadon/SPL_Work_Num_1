@@ -48,7 +48,7 @@ Party::Party(const Party& other): is_timer_on(other.is_timer_on),mId(other.mId),
     
 }
 
-Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy->clone()), mState(other.mState), offers(other.offers){
+Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers){
     other.mJoinPolicy = nullptr;
     }
 
@@ -76,7 +76,7 @@ Party& Party::operator=(Party&& other) noexcept{
         mId = other.mId;
         mName = other.mName;
         mMandates = other.mMandates;
-        mJoinPolicy = other.mJoinPolicy->clone();
+        mJoinPolicy = other.mJoinPolicy;
         offers = other.offers;
         timer = other.timer;
         is_timer_on = other.is_timer_on;

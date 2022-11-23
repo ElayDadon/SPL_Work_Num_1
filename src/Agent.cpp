@@ -88,7 +88,7 @@ Agent::Agent(const Agent& other): mAgentId(other.mAgentId), mPartyId(other.mPart
     *other.numOfPointersToCoalition = *other.numOfPointersToCoalition + 1;
 }
 
-Agent::Agent(Agent&& other) noexcept: mAgentId(other.mAgentId), mPartyId(other.mPartyId), mSelectionPolicy(other.mSelectionPolicy->clone()), coalition(other.coalition), numOfPointersToCoalition(other.numOfPointersToCoalition){
+Agent::Agent(Agent&& other) noexcept: mAgentId(other.mAgentId), mPartyId(other.mPartyId), mSelectionPolicy(other.mSelectionPolicy), coalition(other.coalition), numOfPointersToCoalition(other.numOfPointersToCoalition){
     other.mSelectionPolicy = nullptr;
     other.coalition = nullptr;
     other.numOfPointersToCoalition = nullptr;
@@ -108,7 +108,7 @@ Agent& Agent::operator=(Agent&& other) noexcept{
 
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
-        mSelectionPolicy = other.mSelectionPolicy->clone();
+        mSelectionPolicy = other.mSelectionPolicy;
         coalition = other.coalition;
         numOfPointersToCoalition = other.numOfPointersToCoalition;
 
