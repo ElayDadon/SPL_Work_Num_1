@@ -41,95 +41,277 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/yossi/Desktop/SPL/Assignment1/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Assignment1
+# Object build statements for EXECUTABLE target Assignment1_01
 
 
 #############################################
-# Order-only phony target for Assignment1
+# Order-only phony target for Assignment1_01
 
-build cmake_object_order_depends_target_Assignment1: phony || CMakeFiles/Assignment1.dir
+build cmake_object_order_depends_target_Assignment1_01: phony || CMakeFiles/Assignment1_01.dir
 
-build CMakeFiles/Assignment1.dir/src/main.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/main.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/main.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/main.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/main.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/Agent.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/Agent.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/Agent.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/Agent.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/Agent.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/Agent.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/Coalition.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/Coalition.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/Coalition.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/Coalition.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/Coalition.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/Coalition.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/EdgeWeightSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/EdgeWeightSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/EdgeWeightSelectionPolicy.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/EdgeWeightSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/EdgeWeightSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/EdgeWeightSelectionPolicy.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/Graph.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/Graph.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/Graph.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/Graph.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/Graph.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/Graph.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/LastOfferJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/LastOfferJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/LastOfferJoinPolicy.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/LastOfferJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/LastOfferJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/LastOfferJoinPolicy.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/MandatesJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/MandatesJoinPolicy.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/MandatesJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/MandatesJoinPolicy.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/MandatesSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/MandatesSelectionPolicy.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/MandatesSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/MandatesSelectionPolicy.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/Parser.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/Parser.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/Parser.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/Parser.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/Parser.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/Parser.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/Party.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/Party.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/Party.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/Party.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/Party.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/Party.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
-build CMakeFiles/Assignment1.dir/src/Simulation.cpp.o: CXX_COMPILER__Assignment1_Debug /home/yossi/Desktop/SPL/Assignment1/src/Simulation.cpp || cmake_object_order_depends_target_Assignment1
-  DEP_FILE = CMakeFiles/Assignment1.dir/src/Simulation.cpp.o.d
+build CMakeFiles/Assignment1_01.dir/src/Simulation.cpp.o: CXX_COMPILER__Assignment1_01_Debug /home/yossi/Desktop/SPL/Assignment1/src/Simulation.cpp || cmake_object_order_depends_target_Assignment1_01
+  DEP_FILE = CMakeFiles/Assignment1_01.dir/src/Simulation.cpp.o.d
   FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment1.dir/src
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_01.dir/src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Assignment1
+# Link build statements for EXECUTABLE target Assignment1_01
 
 
 #############################################
-# Link the executable Assignment1
+# Link the executable Assignment1_01
 
-build Assignment1: CXX_EXECUTABLE_LINKER__Assignment1_Debug CMakeFiles/Assignment1.dir/src/main.cpp.o CMakeFiles/Assignment1.dir/src/Agent.cpp.o CMakeFiles/Assignment1.dir/src/Coalition.cpp.o CMakeFiles/Assignment1.dir/src/EdgeWeightSelectionPolicy.cpp.o CMakeFiles/Assignment1.dir/src/Graph.cpp.o CMakeFiles/Assignment1.dir/src/LastOfferJoinPolicy.cpp.o CMakeFiles/Assignment1.dir/src/MandatesJoinPolicy.cpp.o CMakeFiles/Assignment1.dir/src/MandatesSelectionPolicy.cpp.o CMakeFiles/Assignment1.dir/src/Parser.cpp.o CMakeFiles/Assignment1.dir/src/Party.cpp.o CMakeFiles/Assignment1.dir/src/Simulation.cpp.o
+build Assignment1_01: CXX_EXECUTABLE_LINKER__Assignment1_01_Debug CMakeFiles/Assignment1_01.dir/src/main.cpp.o CMakeFiles/Assignment1_01.dir/src/Agent.cpp.o CMakeFiles/Assignment1_01.dir/src/Coalition.cpp.o CMakeFiles/Assignment1_01.dir/src/EdgeWeightSelectionPolicy.cpp.o CMakeFiles/Assignment1_01.dir/src/Graph.cpp.o CMakeFiles/Assignment1_01.dir/src/LastOfferJoinPolicy.cpp.o CMakeFiles/Assignment1_01.dir/src/MandatesJoinPolicy.cpp.o CMakeFiles/Assignment1_01.dir/src/MandatesSelectionPolicy.cpp.o CMakeFiles/Assignment1_01.dir/src/Parser.cpp.o CMakeFiles/Assignment1_01.dir/src/Party.cpp.o CMakeFiles/Assignment1_01.dir/src/Simulation.cpp.o
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Assignment1.dir
+  OBJECT_DIR = CMakeFiles/Assignment1_01.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Assignment1
-  TARGET_PDB = Assignment1.dbg
+  TARGET_FILE = Assignment1_01
+  TARGET_PDB = Assignment1_01.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Assignment1_02
+
+
+#############################################
+# Order-only phony target for Assignment1_02
+
+build cmake_object_order_depends_target_Assignment1_02: phony || CMakeFiles/Assignment1_02.dir
+
+build CMakeFiles/Assignment1_02.dir/src/main.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/main.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/main.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/Agent.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/Agent.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/Agent.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/Coalition.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/Coalition.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/Coalition.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/EdgeWeightSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/EdgeWeightSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/EdgeWeightSelectionPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/Graph.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/Graph.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/Graph.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/LastOfferJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/LastOfferJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/LastOfferJoinPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/MandatesJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/MandatesJoinPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/MandatesSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/MandatesSelectionPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/Parser.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/Parser.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/Parser.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/Party.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/Party.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/Party.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+build CMakeFiles/Assignment1_02.dir/src/Simulation.cpp.o: CXX_COMPILER__Assignment1_02_Debug /home/yossi/Desktop/SPL/Assignment1/src/Simulation.cpp || cmake_object_order_depends_target_Assignment1_02
+  DEP_FILE = CMakeFiles/Assignment1_02.dir/src/Simulation.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_02.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Assignment1_02
+
+
+#############################################
+# Link the executable Assignment1_02
+
+build Assignment1_02: CXX_EXECUTABLE_LINKER__Assignment1_02_Debug CMakeFiles/Assignment1_02.dir/src/main.cpp.o CMakeFiles/Assignment1_02.dir/src/Agent.cpp.o CMakeFiles/Assignment1_02.dir/src/Coalition.cpp.o CMakeFiles/Assignment1_02.dir/src/EdgeWeightSelectionPolicy.cpp.o CMakeFiles/Assignment1_02.dir/src/Graph.cpp.o CMakeFiles/Assignment1_02.dir/src/LastOfferJoinPolicy.cpp.o CMakeFiles/Assignment1_02.dir/src/MandatesJoinPolicy.cpp.o CMakeFiles/Assignment1_02.dir/src/MandatesSelectionPolicy.cpp.o CMakeFiles/Assignment1_02.dir/src/Parser.cpp.o CMakeFiles/Assignment1_02.dir/src/Party.cpp.o CMakeFiles/Assignment1_02.dir/src/Simulation.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Assignment1_02.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Assignment1_02
+  TARGET_PDB = Assignment1_02.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Assignment1_03
+
+
+#############################################
+# Order-only phony target for Assignment1_03
+
+build cmake_object_order_depends_target_Assignment1_03: phony || CMakeFiles/Assignment1_03.dir
+
+build CMakeFiles/Assignment1_03.dir/src/main.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/main.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/main.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/Agent.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/Agent.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/Agent.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/Coalition.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/Coalition.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/Coalition.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/EdgeWeightSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/EdgeWeightSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/EdgeWeightSelectionPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/Graph.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/Graph.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/Graph.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/LastOfferJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/LastOfferJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/LastOfferJoinPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/MandatesJoinPolicy.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesJoinPolicy.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/MandatesJoinPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/MandatesSelectionPolicy.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/MandatesSelectionPolicy.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/MandatesSelectionPolicy.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/Parser.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/Parser.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/Parser.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/Party.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/Party.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/Party.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+build CMakeFiles/Assignment1_03.dir/src/Simulation.cpp.o: CXX_COMPILER__Assignment1_03_Debug /home/yossi/Desktop/SPL/Assignment1/src/Simulation.cpp || cmake_object_order_depends_target_Assignment1_03
+  DEP_FILE = CMakeFiles/Assignment1_03.dir/src/Simulation.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment1_03.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Assignment1_03
+
+
+#############################################
+# Link the executable Assignment1_03
+
+build Assignment1_03: CXX_EXECUTABLE_LINKER__Assignment1_03_Debug CMakeFiles/Assignment1_03.dir/src/main.cpp.o CMakeFiles/Assignment1_03.dir/src/Agent.cpp.o CMakeFiles/Assignment1_03.dir/src/Coalition.cpp.o CMakeFiles/Assignment1_03.dir/src/EdgeWeightSelectionPolicy.cpp.o CMakeFiles/Assignment1_03.dir/src/Graph.cpp.o CMakeFiles/Assignment1_03.dir/src/LastOfferJoinPolicy.cpp.o CMakeFiles/Assignment1_03.dir/src/MandatesJoinPolicy.cpp.o CMakeFiles/Assignment1_03.dir/src/MandatesSelectionPolicy.cpp.o CMakeFiles/Assignment1_03.dir/src/Parser.cpp.o CMakeFiles/Assignment1_03.dir/src/Party.cpp.o CMakeFiles/Assignment1_03.dir/src/Simulation.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Assignment1_03.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Assignment1_03
+  TARGET_PDB = Assignment1_03.dbg
 
 
 #############################################
@@ -166,7 +348,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/yossi/Desktop/SPL/Assignment1/cmake-build-debug
 
-build all: phony Assignment1
+build all: phony Assignment1_01 Assignment1_02 Assignment1_03
 
 # =============================================================================
 # Built-in targets

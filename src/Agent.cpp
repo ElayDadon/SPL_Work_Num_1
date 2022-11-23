@@ -29,21 +29,18 @@ void Agent::setNull(){
 }
 void Agent::step(Simulation &sim)
 {
-    // TODO: implement this method
-Party* allowedParty = mSelectionPolicy -> select(sim.getNonConstGraph(),mPartyId);
-if (allowedParty != nullptr)
-{
-    /* there is no agent from the same party that already asked,
-     then ask the party to join to the coalition */
-
-    allowedParty ->setState(CollectingOffers);
-    if(allowedParty->get_timer() == 0)
+    Party* allowedParty = mSelectionPolicy -> select(sim.getNonConstGraph(),mPartyId);
+    if (allowedParty != nullptr)
     {
-        allowedParty->start_timer();
+        allowedParty ->setState(CollectingOffers);
+        if(allowedParty->get_timer() == 0)
+        {
+            allowedParty->start_timer();
+        }
+        allowedParty -> addOffer(*this);
     }
-    allowedParty -> addOffer(*this);
 }
-}
+
 Agent::~Agent(){
     if(mSelectionPolicy)
         delete mSelectionPolicy;
@@ -55,6 +52,7 @@ Agent::~Agent(){
             *numOfPointersToCoalition = *numOfPointersToCoalition - 1;
     }
 }
+
 void Agent::updateMandates(int mandates){
     coalition = new Coalition(mPartyId, mandates);
     coalition->addParty(mPartyId);
@@ -70,12 +68,13 @@ Agent& Agent::operator=(const Agent& other){
     if(this != &other){
         if(mSelectionPolicy)
             delete mSelectionPolicy;
-        if(*numOfPointersToCoalition == 1){
-            delete numOfPointersToCoalition;
-            delete coalition;
+        if(numOfPointersToCoalition) {
+            if (*numOfPointersToCoalition == 1) {
+                delete numOfPointersToCoalition;
+                delete coalition;
+            } else
+                *numOfPointersToCoalition = *numOfPointersToCoalition - 1;
         }
-        else
-            *numOfPointersToCoalition = *numOfPointersToCoalition - 1;
 
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
@@ -112,12 +111,13 @@ Agent& Agent::operator=(Agent&& other) noexcept{
     if(this != &other) {
         if(mSelectionPolicy)
             delete mSelectionPolicy;
-        if(*numOfPointersToCoalition == 1){
-            delete numOfPointersToCoalition;
-            delete coalition;
+        if(numOfPointersToCoalition) {
+            if (*numOfPointersToCoalition == 1) {
+                delete numOfPointersToCoalition;
+                delete coalition;
+            } else
+                *numOfPointersToCoalition = *numOfPointersToCoalition - 1;
         }
-        else
-            *numOfPointersToCoalition = *numOfPointersToCoalition - 1;
 
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;

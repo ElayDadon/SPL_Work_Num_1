@@ -39,17 +39,22 @@ const string & Party::getName() const
 {
     return mName;
 }
-/*
-Party::Party(const Party& other): is_timer_on(other.is_timer_on),mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers){
+Party::~Party() {
+    if(mJoinPolicy)
+        delete mJoinPolicy;
+}
+
+Party::Party(const Party& other): is_timer_on(other.is_timer_on),mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy->clone()), mState(other.mState), offers(other.offers){
     
 }
-Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers){
+
+Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy->clone()), mState(other.mState), offers(other.offers){
     other.mJoinPolicy = nullptr;
     }
 
 Party& Party::operator=(const Party& other){
     if(this != &other) {
-        if(mJoinPolicy!=nullptr)
+        if(mJoinPolicy)
             delete mJoinPolicy;
     
         mId = other.mId;
@@ -62,6 +67,7 @@ Party& Party::operator=(const Party& other){
     }
     return *this;
 }
+
 Party& Party::operator=(Party&& other) noexcept{
     if(this != & other) {
          if(mJoinPolicy)
@@ -79,7 +85,7 @@ Party& Party::operator=(Party&& other) noexcept{
     }
     return *this;
 }
-*/
+
 void Party::step(Simulation &s)
 {
     if(this->is_timer_on&&this ->get_timer()<3){
