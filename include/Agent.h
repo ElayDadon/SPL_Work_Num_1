@@ -23,9 +23,9 @@ public:
     void setPartyId(int partyIdToUpdate);
     void setAgentId(int id);
 private:
-    int* numOfPointersToCoalition;
     int mAgentId;
     int mPartyId;
     SelectionPolicy *mSelectionPolicy;
     Coalition *coalition;
+    int* numOfPointersToCoalition;
 };

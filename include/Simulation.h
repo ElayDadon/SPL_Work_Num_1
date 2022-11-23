@@ -29,5 +29,4 @@ private:
     Graph mGraph;
     vector<Agent> mAgents;
     int numOfCoalitions;
-    vector<Coalition> Coalitions;
 };

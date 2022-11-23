@@ -29,7 +29,7 @@ void Simulation::step()
     //he is so boring 
     //Agent step
     int mAgents_size = mAgents.size();
-     for (unsigned i = 0; i< mAgents_size; i++)
+     for (int i = 0; i< mAgents_size; i++)
     {
         Agent* agent_saver = &mAgents[i];
         agent_saver->step(*this);
@@ -92,14 +92,14 @@ void Simulation::setAgents(Agent &agent_to_add){
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
     vector<vector<int>> coalitions;
-    for(unsigned i = 0; i < numOfCoalitions; i++){
+    for(int i = 0; i < numOfCoalitions; i++){
         vector<int> coalition{mAgents[i].getPartyId()};
         coalitions.push_back(coalition);
     }
     for(unsigned i = numOfCoalitions; i < mAgents.size(); i++){
         bool found = false;
         Agent toAdd = mAgents[i];
-        for(unsigned j = 0; j < numOfCoalitions & !found; j++){
+        for(int j = 0; (j < numOfCoalitions) & !found; j++){
             vector<int> c = coalitions[j];
             if(std::find(c.begin(), c.end(), toAdd.getCoalition()->getId()) != c.end()){
                 coalitions[j].push_back(toAdd.getPartyId());

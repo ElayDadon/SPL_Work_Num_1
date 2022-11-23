@@ -2,7 +2,7 @@
 #include <vector>
 #include "../include/Simulation.h"
 #include "../include/SelectionPolicy.h"
-#include "../include/Coalition.h"
+
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy), coalition(nullptr), numOfPointersToCoalition(new int(1))
 {
     // You can change the implementation of the constructor, but not the signature!
@@ -42,8 +42,7 @@ void Agent::step(Simulation &sim)
 }
 
 Agent::~Agent(){
-    if(mSelectionPolicy)
-        delete mSelectionPolicy;
+    delete mSelectionPolicy;
     if(numOfPointersToCoalition) {
         if (*numOfPointersToCoalition == 1) {
             delete numOfPointersToCoalition;
@@ -66,8 +65,7 @@ void Agent::setAgentId(int id){
 
 Agent& Agent::operator=(const Agent& other){
     if(this != &other){
-        if(mSelectionPolicy)
-            delete mSelectionPolicy;
+        delete mSelectionPolicy;
         if(numOfPointersToCoalition) {
             if (*numOfPointersToCoalition == 1) {
                 delete numOfPointersToCoalition;
@@ -86,21 +84,11 @@ Agent& Agent::operator=(const Agent& other){
     return *this;
 }
 
-Agent::Agent(const Agent& other){
-    mAgentId = other.mAgentId;
-    mPartyId = other.mPartyId;
-    mSelectionPolicy = other.mSelectionPolicy->clone();
-    coalition = other.coalition;
+Agent::Agent(const Agent& other): mAgentId(other.mAgentId), mPartyId(other.mPartyId), mSelectionPolicy(other.mSelectionPolicy->clone()), coalition(other.coalition), numOfPointersToCoalition(other.numOfPointersToCoalition){
     *other.numOfPointersToCoalition = *other.numOfPointersToCoalition + 1;
-    numOfPointersToCoalition = other.numOfPointersToCoalition;
 }
 
-Agent::Agent(Agent&& other) noexcept{
-    mAgentId = other.mAgentId;
-    mPartyId = other.mPartyId;
-    mSelectionPolicy = other.mSelectionPolicy->clone();
-    coalition = other.coalition;
-    numOfPointersToCoalition = other.numOfPointersToCoalition;
+Agent::Agent(Agent&& other) noexcept: mAgentId(other.mAgentId), mPartyId(other.mPartyId), mSelectionPolicy(other.mSelectionPolicy->clone()), coalition(other.coalition), numOfPointersToCoalition(other.numOfPointersToCoalition){
     other.mSelectionPolicy = nullptr;
     other.coalition = nullptr;
     other.numOfPointersToCoalition = nullptr;
@@ -109,8 +97,7 @@ Agent::Agent(Agent&& other) noexcept{
 
 Agent& Agent::operator=(Agent&& other) noexcept{
     if(this != &other) {
-        if(mSelectionPolicy)
-            delete mSelectionPolicy;
+        delete mSelectionPolicy;
         if(numOfPointersToCoalition) {
             if (*numOfPointersToCoalition == 1) {
                 delete numOfPointersToCoalition;
