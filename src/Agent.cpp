@@ -44,21 +44,24 @@ if (allowedParty != nullptr)
     allowedParty -> addOffer(this);
 }
 }
-Agent::~Agent(){
-    if(mSelectionPolicy)
-        delete mSelectionPolicy;
+/*Agent::~Agent(){
+    //if(mSelectionPolicy)
+     //   delete mSelectionPolicy;
     // if(coalition->removeParty(mPartyId))
     //     delete coalition;
     
-}
+}*/
 void Agent::updateMandates(int mandates){
     coalition = new Coalition(mPartyId, mandates);
     coalition->addParty(mPartyId);
 }
+int Agent::coalitionMandates() const {
+    return coalition->getMandates();
+}
 void Agent::setAgentId(int id){
     this->mAgentId = id;
 }
-
+/*
 Agent& Agent::operator=(const Agent& other){
     if(this != &other){
         // if(mSelectionPolicy)
@@ -102,6 +105,6 @@ Agent& Agent::operator=(Agent&& other) noexcept{
     return *this;
 }
 
-
+*/
 
 

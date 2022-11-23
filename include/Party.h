@@ -18,10 +18,10 @@ class Party
 {
 public:
     Party(int id, string name, int mandates, JoinPolicy *); 
-    Party(const Party&);
-    Party(Party&&) noexcept;
-    Party& operator=(const Party&);
-    Party& operator=(Party&&) noexcept;
+    //Party(const Party&);
+    //Party(Party&&) noexcept;
+    //Party& operator=(const Party&);
+    //Party& operator=(Party&&) noexcept;
     State getState() const;
     void setState(State state);
     int getMandates() const;

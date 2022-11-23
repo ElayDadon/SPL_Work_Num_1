@@ -24,7 +24,6 @@ public:
     Graph* getNonConstGraph();
     Party* getNonConstParty(int partyId);
     void updateMandates();
-    void updateCoalition();  
     void addPartyToCoalition(int id,int mandates);
 private:
     Graph mGraph;

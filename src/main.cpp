@@ -20,7 +20,6 @@ int main(int argc, char **argv)
     // run simulation and store json state after each iteration
     vector<json> outPerIter = {Parser::makeJson(simulation)};
     simulation.updateMandates();
-    simulation.updateCoalition();
     while (!simulation.shouldTerminate())
     {
         simulation.step();
