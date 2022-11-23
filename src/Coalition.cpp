@@ -11,6 +11,18 @@ Coalition::Coalition(int id,int Mmandates): id(id), mandates(Mmandates){
 void Coalition::addMandates(int mandates){
     this->mandates += mandates;
 }
+
+bool Coalition::removeParty(int partyId){
+    bool found = false;
+    for (vector<int>::iterator i = parties.begin(); !found & i < parties.end(); i++)
+    {
+        if(*i == partyId){
+            parties.erase(i);
+            found = true;
+        }
+    }
+    return parties.size() == 0;
+}
 bool Coalition::contains(int partyId) {
     for (unsigned i = 0; i < parties.size(); ++i) {
         if(parties.at(i) == partyId)

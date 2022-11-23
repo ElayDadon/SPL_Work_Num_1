@@ -3,8 +3,7 @@
 #include "Simulation.h"
 #include "Agent.h"
 
-Party::Party(int id, string name, int mandates, JoinPolicy *jp) : is_timer_on(false), mId(id),timer(0), mName(name), mMandates(mandates), mJoinPolicy(jp),mState(Waiting) ,offers(), coalition(nullptr)
-{
+Party::Party(int id, string name, int mandates, JoinPolicy *jp) : is_timer_on(false), mId(id),timer(0), mName(name), mMandates(mandates), mJoinPolicy(jp),mState(Waiting){
     // You can change the implementation of the constructor, but not the signature!
 }
 
@@ -40,25 +39,16 @@ const string & Party::getName() const
 {
     return mName;
 }
-void Party::setCoalition(Coalition* set_coalition){
-    this-> coalition = set_coalition;
-}
- Coalition* Party::getCoalition(){
-    return this->coalition;
- }
-Party::Party(const Party& other): is_timer_on(other.is_timer_on),mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers), coalition(other.coalition){
+Party::Party(const Party& other): is_timer_on(other.is_timer_on),mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers){
     
 }
-Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers), coalition(other.coalition){
+Party::Party(Party&& other) noexcept : is_timer_on(other.is_timer_on), mId(other.mId), timer(other.timer), mName(other.mName), mMandates(other.mMandates), mJoinPolicy(other.mJoinPolicy), mState(other.mState), offers(other.offers){
     other.mJoinPolicy = nullptr;
-    other.coalition = nullptr;
-}
+    }
 Party& Party::operator=(const Party& other){
     if(this != &other) {
         if(mJoinPolicy!=nullptr)
             delete mJoinPolicy;
-        if(coalition)
-            delete coalition;
     
         mId = other.mId;
         mName = other.mName;
@@ -67,7 +57,6 @@ Party& Party::operator=(const Party& other){
         offers = other.offers;
         timer = other.timer;
         is_timer_on = other.is_timer_on;
-        coalition = other.coalition;
     }
     return *this;
 }
@@ -75,8 +64,6 @@ Party& Party::operator=(Party&& other) noexcept{
     if(this != & other) {
          if(mJoinPolicy)
             delete mJoinPolicy;
-        if(coalition)
-            delete coalition;
 
         mId = other.mId;
         mName = other.mName;
@@ -85,15 +72,10 @@ Party& Party::operator=(Party&& other) noexcept{
         offers = other.offers;
         timer = other.timer;
         is_timer_on = other.is_timer_on;
-        coalition = other.coalition;
         //move other
         other.mJoinPolicy = nullptr;
-        other.coalition = nullptr;
     }
     return *this;
-}
-void Party::addCoalition(Coalition* col_to_update){
-this ->coalition = col_to_update;
 }
 void Party::step(Simulation &s)
 {
@@ -105,19 +87,11 @@ void Party::step(Simulation &s)
       Agent agent_to_join_by_coalition = mJoinPolicy -> join((this ->getOffers()));
       Agent clone_agent = agent_to_join_by_coalition;
       clone_agent.setAgentId(s.getAgents().size());
-      clone_agent.setPartyId(this->getId());
+      clone_agent.setPartyId(mId);
       clone_agent.getCoalition() ->addParty(mId);
       clone_agent.getCoalition() ->addMandates(mMandates);
-      s.setAgents(&clone_agent);
-      Coalition* col = clone_agent.getCoalition(); 
-      int x=col->getId();
-      int y=col->getMandates();
-      Coalition* col_saver = new Coalition(x,y);
-      col_saver ->setParties(col->getParties());
-      
-
-    this->addCoalition(col_saver);
-      agent_to_join_by_coalition.setNull();
+      //fatal error, elay is tambal 
+      s.setAgents(clone_agent);
     }
     // TODO: implement this method
 }

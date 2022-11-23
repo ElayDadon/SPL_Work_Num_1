@@ -15,7 +15,7 @@ public:
     void setParties(vector<int> new_parties);
     void setId(int new_Id);
     void setMandates(int Mandates);
-
+    bool removeParty(int);
 
 
 private:

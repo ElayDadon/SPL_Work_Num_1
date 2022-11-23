@@ -2,9 +2,10 @@
 #include "../include/Agent.h"
 #include "../include/Coalition.h"
 
-Agent MandatesJoinPolicy::join(vector<Agent*> offers){
+Agent &MandatesJoinPolicy::join(vector<Agent*> offers){
     Agent maxAgent = *offers[0];
-    for (unsigned i = 1; i < offers.size(); ++i) {
+    unsigned size_offers = offers.size();
+    for (unsigned i = 1; i < size_offers; ++i) {
         if(maxAgent.getCoalition()->getMandates() < offers[i]->getCoalition()->getMandates())
             maxAgent = *offers[i];
     }

@@ -26,8 +26,10 @@ void Simulation::step()
     Party* party_saver = getNonConstParty(i);
     party_saver->step(*this);
     }
+    //he is so boring 
     //Agent step
-     for (unsigned i = 0; i < mAgents.size(); i++)
+    int mAgents_size = mAgents.size();
+     for (unsigned i = 0; i< mAgents_size; i++)
     {
         Agent* agent_saver = &mAgents[i];
         agent_saver->step(*this);
@@ -70,8 +72,8 @@ Graph* Simulation::getNonConstGraph(){
 void Simulation::updateCoalition(){
     for(int i=0;i<mAgents.size();i++){
         Coalition* col_to_party = mAgents[i].getCoalition();
-        Party* to_upadte = this ->getNonConstParty(mAgents[i].getPartyId());
-        to_upadte->setCoalition(col_to_party);
+        Party* to_update = this ->getNonConstParty(mAgents[i].getPartyId());
+        to_update->setCoalition(col_to_party);
     }
 }
 
@@ -87,8 +89,8 @@ const Party &Simulation::getParty(int partyId) const
 {
     return mGraph.getParty(partyId);
 }
-void Simulation::setAgents(Agent* agent_to_add){
-    mAgents.push_back(*agent_to_add);
+void Simulation::setAgents(Agent &agent_to_add){
+    mAgents.push_back(agent_to_add);
 }
 
 /// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.

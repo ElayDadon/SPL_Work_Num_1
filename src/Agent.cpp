@@ -47,8 +47,9 @@ if (allowedParty != nullptr)
 Agent::~Agent(){
     if(mSelectionPolicy)
         delete mSelectionPolicy;
-    if(coalition)
-        delete coalition;
+    // if(coalition->removeParty(mPartyId))
+    //     delete coalition;
+    
 }
 void Agent::updateMandates(int mandates){
     coalition = new Coalition(mPartyId, mandates);
@@ -60,10 +61,10 @@ void Agent::setAgentId(int id){
 
 Agent& Agent::operator=(const Agent& other){
     if(this != &other){
-        if(mSelectionPolicy)
-            delete mSelectionPolicy;
-        if(coalition)
-            delete coalition;
+        // if(mSelectionPolicy)
+        //     delete mSelectionPolicy;
+        // if(coalition)
+        //     delete coalition;
 
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
@@ -84,10 +85,10 @@ Agent::Agent(Agent&& other) noexcept :mAgentId(other.mAgentId), mPartyId(other.m
 
 Agent& Agent::operator=(Agent&& other) noexcept{
     if(this != &other) {
-       if(mSelectionPolicy)
-            delete mSelectionPolicy;
-        if(coalition)
-            delete coalition;
+    //    if(mSelectionPolicy)
+    //         delete mSelectionPolicy;
+    //     if(coalition)
+    //         delete coalition;
 
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;

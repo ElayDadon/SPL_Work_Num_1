@@ -45,7 +45,8 @@ const vector<Party*> Graph::getValidNeighbors(int partyId) {
 
 bool Graph::isValidParty(Party *party, int partyId) {
     vector<Agent*> offers = party->getOffers();
-    for (unsigned i = 0; i < offers.size(); ++i) {
+    int size_offers = offers.size();
+    for (unsigned i = 0; i < size_offers; ++i) {
         Agent* agent = offers[i];
         Coalition* c = agent->getCoalition();
         if(c->contains(partyId))
@@ -57,9 +58,10 @@ bool Graph::isValidParty(Party *party, int partyId) {
 Party* Graph::getHeaviestNeighbor(int partyId) {
     vector<Party*> neighbors = getValidNeighbors(partyId);
     Party *maxNeighbor;
-    if(neighbors.size() != 0) {
+    if(neighbors.size() != 0) { 
         maxNeighbor = neighbors[0];
-        for (unsigned i = 0; i < neighbors.size(); i++) {
+        unsigned size_neighbors = neighbors.size();
+        for (unsigned i = 0; i < size_neighbors; i++) {
             if(neighbors[i]->getMandates() > maxNeighbor->getMandates())
                 maxNeighbor = neighbors[i];
         }
@@ -69,10 +71,11 @@ Party* Graph::getHeaviestNeighbor(int partyId) {
 
 Party* Graph::getHeaviestEdgeNeighbor(int partyId) {
     vector<Party*> neighbors = getValidNeighbors(partyId);
-    Party *maxEdgeNeighbor = nullptr    ;
+    Party *maxEdgeNeighbor = nullptr;
     if(neighbors.size() != 0) {
         maxEdgeNeighbor = neighbors[0];
-        for (unsigned i = 1; i < neighbors.size(); i++) {
+        unsigned neighbors_size = neighbors.size();
+        for (unsigned i = 1; i < neighbors_size; i++) {
             if(getEdgeWeight(partyId, neighbors[i]->getId()) > getEdgeWeight(partyId, maxEdgeNeighbor->getId()))
                 maxEdgeNeighbor = neighbors[i];
         }
